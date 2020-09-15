@@ -1,2 +1,2 @@
-# my_phpmyadim
+# my_phpmyadmin
 Trying to recreate phpMyAdmin
