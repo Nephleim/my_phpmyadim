@@ -3,6 +3,7 @@
     require_once('./Models/Table.php');
     require_once('connect.php');
     require_once('Manager.php');
+
 function getDatabases() {
     $manager = new Manager();
         
@@ -12,6 +13,7 @@ function getDatabases() {
         $database = new Databases($db[0]);
         array_push($manager->databases_list, $database);
     }
+    $manager->conn = null;
     return $manager->databases_list;
 }
 
@@ -27,8 +29,27 @@ function getDatabases() {
        ]);
        array_push($array, $tables_data);
      }
+     $manager->conn = null;
      return $array;
  }
+
+ function displayDatabases($list) {
+  foreach($list as $each) 
+  {
+    print_r($each);
+    echo('<br>');
+  }
+ }
+
+ function displayTables($list) {
+  foreach($list as $each) 
+  {
+    print_r($each);
+    echo('<br>');
+  }
+ }
+
+
 
 
 

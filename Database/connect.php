@@ -7,7 +7,6 @@ function connect() {
     try {
         $conn = new PDO("mysql:host=$servername", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully\n";
       } catch(PDOException $e) {
         echo "\n" . $e->getMessage();
       }

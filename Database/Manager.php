@@ -1,4 +1,5 @@
 <?php
+require_once('connect.php');
 
 class Manager {
     public $databases_list;
