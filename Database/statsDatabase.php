@@ -7,7 +7,7 @@ $manager = new Manager();
 try{
     $sql = "DROP DATABASE $dbname";
     $manager->conn->exec($sql);
-    echo "Database deleted successfully";
+    echo "Database created successfully";
 } catch(PDOException $e){
     die("ERROR: Could not able to execute $sql. " . $e->getMessage());
 }
