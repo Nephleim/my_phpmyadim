@@ -137,4 +137,23 @@ $(document).ready(function() {
         });
     });
 
+    $("#sendDeleteColumn").click(function(e) {
+        $.ajax({
+            type: "POST",
+            url: "./Database/Tables/DeleteColumn.php",
+            data: {
+                dbname: $("#dbNameDeleteColumn").val(),
+                tableName: $("#tableNameDeleteColumn").val(),
+                columnName: $("#columnNameDeleteColumn").val()
+            },
+            dataType: "html",
+            success: function(response) {
+                document.getElementById('result').innerHTML = response;
+            },
+            error: function() {
+                document.getElementById('result').innerHTML = "error";
+            }
+        });
+    });
+
 });

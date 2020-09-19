@@ -93,6 +93,17 @@ Taille élément: <input type="text" id="columnSizeAddToTable">
 <br>
 <button type="button" id="sendAddToTable" >Ajouter à la table</button>
 <br>
+<br>
+<br>
+<br>
+Nom base de données: <input type="text" id="dbNameDeleteColumn">
+<br>
+Nom table: <input type="text" id="tableNameDeleteColumn">
+<br>
+Nom colonne: <input type="text" id="columnNameDeleteColumn">
+<br>
+<button type="button" id="sendDeleteColumn" >Supprimer colonne</button>
+<br>
 <div id="result"><b>Person info will be listed here.</b></div>
 
 
