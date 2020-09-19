@@ -10,6 +10,9 @@ $dbnameOld = $_POST['dbnameOld'];
 $manager = new Manager();
 
 try{
+  $sql = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE table_schema='$dbnameOld';";
+  
+    $tables_data = fetchAllFromDB($manager, $sql, null);
     $sql = "CREATE DATABASE $dbnameNew";
     $manager->conn->exec($sql);
     $array = [];

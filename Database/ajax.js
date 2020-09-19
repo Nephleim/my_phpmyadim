@@ -48,19 +48,15 @@ $(document).ready(function() {
     });
 
     $("#sendStatsDB").click(function(e) {
+        dbname = document.getElementById('dbInputStats').innerHTML;
         $.ajax({
             type: "GET",
             url: "../Database/statsDatabase.php",
-            data: {
-                dbStats: $("#dbInputStats").val()
-            },
-            dataType: "html",
-            success: function(response) {
-                document.getElementById('result').innerHTML = response;
-            },
-            error: function() {
-                document.getElementById('result').innerHTML = "error";
-            }
+            data: 'dbname=' + dbname,
+            dataType: 'html'
+        }).done(function(data) {
+            var result = $.parseJSON(data);
+            document.getElementById('result').innerHTML = result;
         });
     });
 
