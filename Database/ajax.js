@@ -51,7 +51,6 @@ $(document).ready(function() {
     });
 
     $("#sendStatsDB").click(function(e) {
-        // dbnamee = document.getElementById('dbInputStats').innerHTML;
         $.ajax({
             type: "GET",
             url: "./Database/Databases/statsDatabase.php",
@@ -63,15 +62,70 @@ $(document).ready(function() {
         });
     });
 
+    $("#sendDisplayTable").click(function(e) {
+        $.ajax({
+            type: "GET",
+            url: "./Database/Tables/displayTables.php",
+            data: {
+                dbname: $("#dbNameDisplayTable").val()
+            },
+            dataType: "html",
+            success: function(response) {
+                document.getElementById('result').innerHTML = response;
+            },
+            error: function() {
+                document.getElementById('result').innerHTML = "error";
+            }
+        });
+    });
+
+    // $("#sendCreateTable").click(function(e) {
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "./Database/Tables/createTable.php",
+    //         data: {
+    //             dbname: $("#dbNameCreateTable").val(),
+    //             tableNameCreate: $("#tableNameCreate").val()
+    //         },
+    //         dataType: "html",
+    //         success: function(response) {
+    //             document.getElementById('result').innerHTML = response;
+    //         },
+    //         error: function() {
+    //             document.getElementById('result').innerHTML = "error";
+    //         }
+    //     });
+    // });
+
     $("#sendRenameTable").click(function(e) {
-        console.log("error");
         $.ajax({
             type: "POST",
             url: "./Database/Tables/renameTable.php",
             data: {
                 dbname: $("#dbNameRenameTable").val(),
-                tableNameOld: $("#tableNameOld").val(),
-                tableNameNew: $("#tableNameNew").val()
+                tableNameOld: $("#tableNameRenameNew").val(),
+                tableNameNew: $("#tableNameRenameNew").val()
+            },
+            dataType: "html",
+            success: function(response) {
+                document.getElementById('result').innerHTML = response;
+            },
+            error: function() {
+                document.getElementById('result').innerHTML = "error";
+            }
+        });
+    });
+
+    $("#sendAddToTable").click(function(e) {
+        $.ajax({
+            type: "POST",
+            url: "./Database/Tables/addToTable.php",
+            data: {
+                dbname: $("#dbNameAddToTable").val(),
+                tableName: $("#tableNameAddToTable").val(),
+                columnName: $("#columnAddToTable").val(),
+                columnType: $("#columnTypeAddToTable").val(),
+                columnSize: $("#columnSizeAddToTable").val()
             },
             dataType: "html",
             success: function(response) {

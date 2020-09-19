@@ -2,8 +2,7 @@
 
   require_once('./Database/functions.php');
 
-  //  $tables = getTables();
-  getDatabases();   
+  getTables();    
 ?>
 
 <!doctype html>
@@ -55,13 +54,45 @@ Nom base de données: <input type="text" id="dbInputStats">
 <br>
 <br>
 <br>
+Nom base de données: <input type="text" id="dbNameDisplayTable">
+<br>
+<button type="button" id="sendDisplayTable" >Afficher tables</button>
+<!-- Nom base de données: <input type="text" id="dbNameCreateTable">
+<br>
+Nom table: <input type="text" id="tableNameCreate">
+<br>
+<button type="button" id="sendCreateTable" >Créer la table</button> -->
+<br>
+<br>
+<br>
+<br>
 Nom base de données: <input type="text" id="dbNameRenameTable">
 <br>
-Ancien nom table: <input type="text" id="tableNameOld">
+Ancien nom table: <input type="text" id="tableNameRenameOld">
 <br>
-Nouveau nom table: <input type="text" id="tableNameNew">
+Nouveau nom table: <input type="text" id="tableNameRenameNew">
 <br>
-<button type="button" id="sendRenameTable" >Voir les statistiques de la base de données</button>
+<button type="button" id="sendRenameTable" >Renommer la table</button>
+<br>
+<br>
+<br>
+<br>
+Nom base de données: <input type="text" id="dbNameAddToTable">
+<br>
+Nom table: <input type="text" id="tableNameAddToTable">
+<br>
+Nom colonne: <input type="text" id="columnAddToTable">
+Type colonne:
+<select name="Type" id="columnTypeAddToTable">
+  <option value="INT">INT</option>
+  <option value="VARCHAR">VARCHAR</option>
+  <option value="TEXT">TEXT</option>
+  <option value="DATE">DATE</option>
+</select>
+Taille élément: <input type="text" id="columnSizeAddToTable">
+<br>
+<button type="button" id="sendAddToTable" >Ajouter à la table</button>
+<br>
 <div id="result"><b>Person info will be listed here.</b></div>
 
 

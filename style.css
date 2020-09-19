@@ -1,18 +1,34 @@
-.button {
-    background-color: #4CAF50;
-    /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    transition-duration: 0.4s;
+.dbname {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: #F00;
+    border: 2px solid #666;
+    width: auto;
+    color: #000000;
 }
 
-.button:hover {
-    background-color: white;
-    /* Green */
-    color: black;
+.dbname:active {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: blue;
+    border: 2px solid #666;
+    width: auto;
+    color: #000000;
+}
+
+label {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: #F00;
+    border: 2px solid #666;
+    width: auto;
+    color: #000000;
+}
+
+.tables {
+    font-size: 12px;
+}
+
+.btn .tables {
+    display: block;
 }
