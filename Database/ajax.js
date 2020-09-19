@@ -65,22 +65,22 @@ $(document).ready(function() {
 
     $("#sendRenameTable").click(function(e) {
         console.log("error");
-        // $.ajax({
-        //     type: "POST",
-        //     url: "./Database/Tables/renameTable.php",
-        //     data: {
-        //         dbname: $("#dbNameRenameTable").val(),
-        //         tablenameOld: $("#tableNameOld").val(),
-        //         tablenameNew: $("#tableNameNew").val()
-        //     },
-        //     dataType: "html",
-        //     success: function(response) {
-        //         document.getElementById('result').innerHTML = response;
-        //     },
-        //     error: function() {
-        //         document.getElementById('result').innerHTML = "error";
-        //     }
-        // });
+        $.ajax({
+            type: "POST",
+            url: "./Database/Tables/renameTable.php",
+            data: {
+                dbname: $("#dbNameRenameTable").val(),
+                tableNameOld: $("#tableNameOld").val(),
+                tableNameNew: $("#tableNameNew").val()
+            },
+            dataType: "html",
+            success: function(response) {
+                document.getElementById('result').innerHTML = response;
+            },
+            error: function() {
+                document.getElementById('result').innerHTML = "error";
+            }
+        });
     });
 
 });
