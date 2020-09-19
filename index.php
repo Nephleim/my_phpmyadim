@@ -47,9 +47,21 @@ Nouveau nom base de données: <input type="text" id="dbInputRenameNew">
 Nom base de données: <input type="text" id="dbInputStats">
 <br>
 <button type="button" id="sendStatsDB" >Voir les statistiques de la base de données</button>
-
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+Nom base de données: <input type="text" id="dbNameRenameTable">
+<br>
+Ancien nom table: <input type="text" id="tableNameOld">
+<br>
+Nouveau nom table: <input type="text" id="tableNameNew">
+<br>
+<button type="button" id="sendRenameTable" >Voir les statistiques de la base de données</button>
 <div id="result"><b>Person info will be listed here.</b></div>
 
 

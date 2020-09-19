@@ -1,15 +1,18 @@
 $(document).ready(function() {
     $("#sendDBName").click(function(e) {
+        console.log("error");
         $.ajax({
             type: "POST",
-            url: "../Database/createDatabase.php",
+            url: "./Database/Databases/createDatabase.php",
             data: { dbname: $("#dbInputCreate").val() },
             dataType: "html",
             success: function(response) {
                 document.getElementById('result').innerHTML = response;
+                document.getElementById('dbInputCreate').value = '';
             },
             error: function() {
                 document.getElementById('result').innerHTML = "error";
+                document.getElementById('dbInputCreate').value = '';
             }
         });
     });
@@ -17,7 +20,7 @@ $(document).ready(function() {
     $("#sendDeleteDB").click(function(e) {
         $.ajax({
             type: "POST",
-            url: "../Database/dropDatabase.php",
+            url: "./Database/Databases/dropDatabase.php",
             data: { dbname: $("#dbInputDelete").val() },
             dataType: "html",
             success: function(response) {
@@ -32,7 +35,7 @@ $(document).ready(function() {
     $("#sendRenameDB").click(function(e) {
         $.ajax({
             type: "POST",
-            url: "../Database/renameDatabase.php",
+            url: "./Database/Databases/renameDatabase.php",
             data: {
                 dbnameOld: $("#dbInputRenameOld").val(),
                 dbnameNew: $("#dbInputRenameNew").val()
@@ -48,16 +51,36 @@ $(document).ready(function() {
     });
 
     $("#sendStatsDB").click(function(e) {
-        dbname = document.getElementById('dbInputStats').innerHTML;
+        // dbnamee = document.getElementById('dbInputStats').innerHTML;
         $.ajax({
             type: "GET",
-            url: "../Database/statsDatabase.php",
-            data: 'dbname=' + dbname,
+            url: "./Database/Databases/statsDatabase.php",
+            data: { dbname: $("#dbInputStats").val() },
             dataType: 'html'
         }).done(function(data) {
             var result = $.parseJSON(data);
             document.getElementById('result').innerHTML = result;
         });
+    });
+
+    $("#sendRenameTable").click(function(e) {
+        console.log("error");
+        // $.ajax({
+        //     type: "POST",
+        //     url: "./Database/Tables/renameTable.php",
+        //     data: {
+        //         dbname: $("#dbNameRenameTable").val(),
+        //         tablenameOld: $("#tableNameOld").val(),
+        //         tablenameNew: $("#tableNameNew").val()
+        //     },
+        //     dataType: "html",
+        //     success: function(response) {
+        //         document.getElementById('result').innerHTML = response;
+        //     },
+        //     error: function() {
+        //         document.getElementById('result').innerHTML = "error";
+        //     }
+        // });
     });
 
 });
