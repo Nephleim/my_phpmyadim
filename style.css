@@ -1,34 +1,14 @@
-.dbname {
-    margin-top: 5px;
-    padding: 5px;
-    background-color: #F00;
-    border: 2px solid #666;
-    width: auto;
-    color: #000000;
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.dbname:active {
-    margin-top: 5px;
-    padding: 5px;
-    background-color: blue;
-    border: 2px solid #666;
-    width: auto;
-    color: #000000;
+th,
+td {
+    text-align: left;
+    padding: 8px;
 }
 
-label {
-    margin-top: 5px;
-    padding: 5px;
-    background-color: #F00;
-    border: 2px solid #666;
-    width: auto;
-    color: #000000;
-}
-
-.tables {
-    font-size: 12px;
-}
-
-.btn .tables {
-    display: block;
+tr:nth-child(even) {
+    background-color: #f2f2f2
 }

@@ -189,6 +189,26 @@ $(document).ready(function() {
             }
         });
     });
+
+    $("#sendDeleteRow").click(function(e) {
+        $.ajax({
+            type: "POST",
+            url: "./Database/Data/DeleteRow.php",
+            data: {
+                dbname: $("#selectDB").val(),
+                tableName: $("#selectTable").val(),
+                columnName: $("#columnNameDeleteRow").val(),
+                value: $("#valueRowDeleteRow").val()
+            },
+            dataType: "html",
+            success: function(response) {
+                document.getElementById('result').innerHTML = response;
+            },
+            error: function() {
+                document.getElementById('result').innerHTML = "error";
+            }
+        });
+    });
 });
 
 function showData() {

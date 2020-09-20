@@ -122,9 +122,18 @@ Taille élément: <input type="text" id="columnSizeRenameColumn">
 <br>
 Nom colonne: <input type="text" id="columnNameAddRow">
 <br>
-Valeur: <input type="text" id="valueRowAddRow">
+Valeur(s): <input type="text" id="valueRowAddRow">
 <br>
-<button type="button" id="sendAddRow" >Ajouter donée</button>
+<button type="button" id="sendAddRow">Ajouter ligne</button>
+<br>
+<br>
+<br>
+<br>
+Nom colonne: <input type="text" id="columnNameDeleteRow">
+<br>
+Valeur: <input type="text" id="valueRowDeleteRow">
+<br>
+<button type="button" id="sendDeleteRow">Supprimer ligne(s)</button>
 <br>
 <div id="result"><b>Person info will be listed here.</b></div>
 

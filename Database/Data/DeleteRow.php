@@ -12,9 +12,9 @@ $manager = new Manager();
 try{
     $sql = "USE $dbname;";
     $manager->conn->exec($sql);
-    $sql = "INSERT INTO `$tableName`($columnName) VALUES ($value);";
+    $sql = "DELETE FROM $tableName WHERE $columnName = $value;";
     $manager->conn->exec($sql);
-    echo "Row added successfully";
+    echo "Row(s) deleted successfully";
 } catch(PDOException $e){
     die("ERROR: Could not able to execute $sql. " . $e->getMessage());
 }
