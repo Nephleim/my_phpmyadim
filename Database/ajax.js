@@ -156,4 +156,26 @@ $(document).ready(function() {
         });
     });
 
+    $("#sendRenameColumn").click(function(e) {
+        $.ajax({
+            type: "POST",
+            url: "./Database/Tables/RenameColumn.php",
+            data: {
+                dbname: $("#dbNameRenameColumn").val(),
+                tableName: $("#tableNameRenameColumn").val(),
+                columnNameOld: $("#columnNameRenameColumnOld").val(),
+                columnNameNew: $("#columnNameRenameColumnNew").val(),
+                columnType: $("#columnTypeRenameColumn").val(),
+                columnSize: $("#columnSizeRenameColumn").val()
+            },
+            dataType: "html",
+            success: function(response) {
+                document.getElementById('result').innerHTML = response;
+            },
+            error: function() {
+                document.getElementById('result').innerHTML = "error";
+            }
+        });
+    });
+
 });

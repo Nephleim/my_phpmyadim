@@ -104,6 +104,27 @@ Nom colonne: <input type="text" id="columnNameDeleteColumn">
 <br>
 <button type="button" id="sendDeleteColumn" >Supprimer colonne</button>
 <br>
+<br>
+<br>
+<br>
+Nom base de données: <input type="text" id="dbNameRenameColumn">
+<br>
+Nom table: <input type="text" id="tableNameRenameColumn">
+<br>
+Ancien nom colonne: <input type="text" id="columnNameRenameColumnOld">
+<br>
+Nouveau nom colonne: <input type="text" id="columnNameRenameColumnNew">
+Type colonne:
+<select name="Type" id="columnTypeRenameColumn">
+  <option value="INT">INT</option>
+  <option value="VARCHAR">VARCHAR</option>
+  <option value="TEXT">TEXT</option>
+  <option value="DATE">DATE</option>
+</select>
+Taille élément: <input type="text" id="columnSizeRenameColumn">
+<br>
+<button type="button" id="sendRenameColumn" >Renommer colonne</button>
+<br>
 <div id="result"><b>Person info will be listed here.</b></div>
 
 
