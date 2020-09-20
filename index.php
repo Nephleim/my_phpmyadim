@@ -19,24 +19,16 @@
 
 <body>
   
-  <select id="selectDB" onchange=showTables()></select>
+  Database: <select id="selectDB" onchange=showTables()></select>
   <br>
-  <select id="selectTable" onchange=showColumns()></select>
+  Tables: <select id="selectTable" onchange=showColumns()></select>
   <br>
 <table id="tableData">
         <tr id="trColumn">
         </tr>
-    </table>
-<br>
-<br>
-<br>
-<br>
+</table>
 
-<br>
-<br>
-<br>
-<br>
-
+<div id="databases">
 Nom base de données: <input type="text" id="dbInputCreate">
 <br>
 <button type="button" id="sendDBName" >Créer base de données</button>
@@ -57,18 +49,11 @@ Nouveau nom base de données: <input type="text" id="dbInputRenameNew">
 <br>
 <br>
 <button type="button" id="sendStatsDB" >Voir les statistiques de la base de données</button>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+</div>  
+
+
+
+<div id="tables">
 Nouveau nom table: <input type="text" id="tableNameRenameNew">
 <br>
 <button type="button" id="sendRenameTable" >Renommer la table</button>
@@ -116,10 +101,10 @@ Taille élément: <input type="text" id="columnSizeRenameColumn">
 <br>
 <br>
 <button type="button" id="sendStatsTable" >Afficher Stats de la table</button>
-<br>
-<br>
-<br>
-<br>
+</div>
+
+
+<div id="datas">
 Nom colonne: <input type="text" id="columnNameAddRow">
 <br>
 Valeur(s): <input type="text" id="valueRowAddRow">
@@ -135,6 +120,7 @@ Valeur: <input type="text" id="valueRowDeleteRow">
 <br>
 <button type="button" id="sendDeleteRow">Supprimer ligne(s)</button>
 <br>
+</div>
 <div id="result"><b>Person info will be listed here.</b></div>
 
 

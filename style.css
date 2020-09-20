@@ -1,6 +1,7 @@
 table {
     border-collapse: collapse;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 th,
@@ -11,4 +12,34 @@ td {
 
 tr:nth-child(even) {
     background-color: #f2f2f2
+}
+
+#databases {
+    padding: 20px;
+    display: inline-block;
+    border: solid;
+    margin: 0;
+    width: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#tables {
+    padding: 20px;
+    display: inline-block;
+    border: solid;
+    margin: 0;
+    width: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#datas {
+    padding: 20px;
+    display: inline-block;
+    border: solid;
+    margin: 0;
+    width: auto;
+    text-align: center;
+    margin-top: 20px;
 }
