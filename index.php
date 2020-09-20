@@ -125,6 +125,15 @@ Taille élément: <input type="text" id="columnSizeRenameColumn">
 <br>
 <button type="button" id="sendRenameColumn" >Renommer colonne</button>
 <br>
+<br>
+<br>
+<br>
+Nom base de données: <input type="text" id="dbInputStatsTable">
+<br>
+Nom table: <input type="text" id="tableInputStatsTable">
+<br>
+<button type="button" id="sendStatsTable" >Afficher Stats de la table</button>
+<br>
 <div id="result"><b>Person info will be listed here.</b></div>
 
 
