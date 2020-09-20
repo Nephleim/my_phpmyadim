@@ -1,8 +1,7 @@
 <?php
 
   require_once('./Database/functions.php');
-
-  getTables();    
+  
 ?>
 
 <!doctype html>
@@ -19,7 +18,25 @@
 </head>
 
 <body>
+  
+  <select id="selectDB" onchange=showTables()></select>
+  <br>
+  <select id="selectTable" onchange=showColumns()></select>
+  <br>
+<table id="tableData">
+        <tr id="trColumn">
+        </tr>
+    </table>
 <br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
 Nom base de données: <input type="text" id="dbInputCreate">
 <br>
 <button type="button" id="sendDBName" >Créer base de données</button>
@@ -27,14 +44,10 @@ Nom base de données: <input type="text" id="dbInputCreate">
 <br>
 <br>
 <br>
-Nom base de données: <input type="text" id="dbInputDelete">
-<br>
 <button type="button" id="sendDeleteDB" >Supprimer base de données</button>
 <br>
 <br>
 <br>
-<br>
-Ancien nom base de données: <input type="text" id="dbInputRenameOld">
 <br>
 Nouveau nom base de données: <input type="text" id="dbInputRenameNew">
 <br>
@@ -42,8 +55,6 @@ Nouveau nom base de données: <input type="text" id="dbInputRenameNew">
 <br>
 <br>
 <br>
-<br>
-Nom base de données: <input type="text" id="dbInputStats">
 <br>
 <button type="button" id="sendStatsDB" >Voir les statistiques de la base de données</button>
 <br>
@@ -54,21 +65,9 @@ Nom base de données: <input type="text" id="dbInputStats">
 <br>
 <br>
 <br>
-Nom base de données: <input type="text" id="dbNameDisplayTable">
-<br>
-<button type="button" id="sendDisplayTable" >Afficher tables</button>
-<!-- Nom base de données: <input type="text" id="dbNameCreateTable">
-<br>
-Nom table: <input type="text" id="tableNameCreate">
-<br>
-<button type="button" id="sendCreateTable" >Créer la table</button> -->
 <br>
 <br>
 <br>
-<br>
-Nom base de données: <input type="text" id="dbNameRenameTable">
-<br>
-Ancien nom table: <input type="text" id="tableNameRenameOld">
 <br>
 Nouveau nom table: <input type="text" id="tableNameRenameNew">
 <br>
@@ -76,10 +75,6 @@ Nouveau nom table: <input type="text" id="tableNameRenameNew">
 <br>
 <br>
 <br>
-<br>
-Nom base de données: <input type="text" id="dbNameAddToTable">
-<br>
-Nom table: <input type="text" id="tableNameAddToTable">
 <br>
 Nom colonne: <input type="text" id="columnAddToTable">
 Type colonne:
@@ -96,20 +91,12 @@ Taille élément: <input type="text" id="columnSizeAddToTable">
 <br>
 <br>
 <br>
-Nom base de données: <input type="text" id="dbNameDeleteColumn">
-<br>
-Nom table: <input type="text" id="tableNameDeleteColumn">
-<br>
 Nom colonne: <input type="text" id="columnNameDeleteColumn">
 <br>
 <button type="button" id="sendDeleteColumn" >Supprimer colonne</button>
 <br>
 <br>
 <br>
-<br>
-Nom base de données: <input type="text" id="dbNameRenameColumn">
-<br>
-Nom table: <input type="text" id="tableNameRenameColumn">
 <br>
 Ancien nom colonne: <input type="text" id="columnNameRenameColumnOld">
 <br>
@@ -128,11 +115,16 @@ Taille élément: <input type="text" id="columnSizeRenameColumn">
 <br>
 <br>
 <br>
-Nom base de données: <input type="text" id="dbInputStatsTable">
-<br>
-Nom table: <input type="text" id="tableInputStatsTable">
-<br>
 <button type="button" id="sendStatsTable" >Afficher Stats de la table</button>
+<br>
+<br>
+<br>
+<br>
+Nom colonne: <input type="text" id="columnNameAddRow">
+<br>
+Valeur: <input type="text" id="valueRowAddRow">
+<br>
+<button type="button" id="sendAddRow" >Ajouter donée</button>
 <br>
 <div id="result"><b>Person info will be listed here.</b></div>
 

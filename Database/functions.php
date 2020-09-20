@@ -25,6 +25,8 @@ function getTables() {
         
     $array = fetchAllFromDB($manager, "SHOW DATABASES", null);
 
+    $result = [];
+
     foreach ($array as $db) {
         $database = new Databases($db[0]);
         array_push($manager->databases_list, $database);
@@ -35,12 +37,12 @@ function getTables() {
     $tables_data = fetchAllFromDB($manager, $sql, [
       $db->name
     ]);
-    echo "<div class=\"dbname\">$db->name</div>";
     foreach($tables_data as $each) {
-      echo "<div class=\"tables\"> - $each[1]</div>";
+      array_push($result, $each[1]);
     }
    }
   $manager->conn = null;
+  return $result;
 }
 
 //  function getTables() {
